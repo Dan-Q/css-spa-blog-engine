@@ -1,0 +1,13 @@
+/* Show only the targeted article: */
+article {
+  display: none;
+  
+  &:target {
+    display: block;
+  }
+}
+
+/* When we haven't clicked a link, show the index article: */
+body:not(:has(:target)) article#index {
+  display: block;
+}
