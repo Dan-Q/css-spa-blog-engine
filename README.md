@@ -4,6 +4,8 @@ Inspired by [a conversation on Melonland Forum](https://forum.melonland.net/inde
 Middleman-powered static site generator that produces a single-page blog using CSS to show specific posts based on the anchor (hash part)
 of the URL. It degrades gracefully such that it works completely wihout JS or CSS (just displays a long page).
 
+See it in action at [https://dan-q.github.io/css-spa-blog-engine/](https://dan-q.github.io/css-spa-blog-engine/).
+
 ## Dependencies
 
 - [Ruby](https://www.ruby-lang.org/) (tested with 3.3.10)
@@ -40,3 +42,12 @@ If you want a real site, you'll want to edit `source/index.html.erb`. Images (fo
 The skeletal stylesheet is in `source/stylesheets/blog.css`, and you'll probably want to expand that too.
 
 There's nothing to stop you adding Javascript too, if that's your jam.
+
+## Deploying to GitHub Pages
+
+`.github/workflows/deploy.yml` contains a fully-functional deployment tool for GitHub Pages. Simply fork this repository, enable Pages from the
+Settings, and push any change to the `main` branch and you'll trigger a redeploy. From now on, any change you commit will be propogated to your
+site promptly.
+
+Note that using Actions to feed your GitHub Pages in this way is only free if your repository is set to Public, which somewhat undermines the ability to use future-dated posts as drafts (they can still be found via the repo!). Also, if you're using future-dated posts for scheduling,
+you might like to amend the workflow so it runs on a schedule, too. [Here's an example](https://github.com/Dan-Q/abnib-birthdays/blob/main/.github/workflows/deploy.yaml).
