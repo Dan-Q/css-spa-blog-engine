@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>A Static Single Page Blog</title>
-    <%= stylesheet_link_tag 'blog' %>
+    <link rel="stylesheet" href="stylesheets/blog.css">
   </head>
   <body>
     <h1>
@@ -23,7 +23,7 @@
     <% posts.each do |post| %>
       <article id="<%= post['id'] %>">
         <h2><%= post['title'] %></h2>
-        <p><%= post['content'] %></p>
+        <%= post['content'] %>
         <p><a href="#">Back home</a></p>
       </article>
     <% end %>
