@@ -7,25 +7,35 @@
     <link rel="stylesheet" href="stylesheets/blog.css">
   </head>
   <body>
-    <h1>
-      A Static Single Page Blog
-    </h1>
+    <header>
+      <h1>
+        A Static Single Page Blog
+      </h1>
+    </header>
 
-    <article id="index">
-      <h2>Posts</h2>
-      <ul>
-        <% posts.each do |post| %>
-          <li><a href="#<%= post['id'] %>"><%= post['title'] %> (<%= post['date'] %>)</a></li>
-        <% end %>
-      </ul>
-    </article>
-
-    <% posts.each do |post| %>
-      <article id="<%= post['id'] %>">
-        <h2><%= post['title'] %></h2>
-        <%= post['content'] %>
-        <p><a href="#">Back home</a></p>
+    <main>
+      <article id="index">
+        <h2>Posts</h2>
+        <ul>
+          <% posts.each do |post| %>
+            <li><a href="#<%= post['id'] %>"><%= post['title'] %> (<%= post['date'] %>)</a></li>
+          <% end %>
+        </ul>
       </article>
-    <% end %>
+
+      <% posts.each do |post| %>
+        <article id="<%= post['id'] %>">
+          <h2><%= post['title'] %></h2>
+          <%= post['content'] %>
+          <p><a href="#">Back home</a></p>
+        </article>
+      <% end %>
+    </main>
+
+    <footer>
+      <p>
+        Powered by the experimental <a href="https://github.com/Dan-Q/css-spa-blog-engine">CSS-SPA-Blog-Engine</a>.
+      </p>
+    </footer>
   </body>
 </html>
